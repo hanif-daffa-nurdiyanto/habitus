@@ -10,10 +10,12 @@ import LogoSmallIcon from "./assets/icons/logo-sm.svg?react";
 import ChartIcon from "./assets/icons/chart.svg?react";
 import FireIcon from "./assets/icons/fire.svg?react";
 import BellIcon from "./assets/icons/bell.svg?react";
-import GoogleIcon from "./assets/icons/google.svg?react";
-import SpotifyIcon from "./assets/icons/spotify.svg?react";
-import TreeHouseIcon from "./assets/icons/treehouse.svg?react";
-import BrazeIcon from "./assets/icons/braze.svg?react";
+import logoIpsum426 from "./assets/icons/logoipsum-426.svg";
+import logoIpsum428 from "./assets/icons/logoipsum-428.svg";
+import logoIpsum430 from "./assets/icons/logoipsum-430.svg";
+import logoIpsum435 from "./assets/icons/logoipsum-435.svg";
+import logoIpsum437 from "./assets/icons/logoipsum-437.svg";
+import logoIpsum439 from "./assets/icons/logoipsum-439.svg";
 import CheckIcon from "./assets/icons/check.svg?react";
 import LockIcon from "./assets/icons/lock.svg?react";
 import DropDownIcon from "./assets/icons/down-circle.svg?react";
@@ -80,6 +82,15 @@ const navItems = [
   { label: 'Blog', href: '#testimonials' },
   { label: 'Resources', href: '#faq' },
   { label: 'About Us', href: '#about' },
+]
+
+const companyLogos = [
+  logoIpsum426,
+  logoIpsum428,
+  logoIpsum430,
+  logoIpsum435,
+  logoIpsum437,
+  logoIpsum439,
 ]
 
 const faqItems = [
@@ -245,12 +256,15 @@ const App = () => {
       </div>
       <div className="min-w-0 pt-0 flex flex-col justify-between gap-8 w-full md:pt-6.25">
         <p className="text-2xl leading-tight font-medium md:text-[clamp(1.5rem,3vw,2.25rem)] md:pr-8 lg:pr-25">Join thousands of users from top companies using Habitus to build better habits</p>
-        <div className="w-full overflow-x-auto scrollbar-none [&::-webkit-scrollbar]:hidden">
-          <div className="w-max flex items-center gap-8 bg-background rounded-[28px] px-8 py-7 md:gap-11 md:rounded-[40px] md:px-14.5 md:py-11">
-            <GoogleIcon />
-            <SpotifyIcon />
-            <TreeHouseIcon />
-            <BrazeIcon />
+        <div className="logo-marquee w-full overflow-hidden rounded-l-[28px] bg-background px-8 py-7 md:rounded-l-[40px] md:px-14.5 md:py-11" role="img" aria-label="Example company logos">
+          <div className="logo-marquee-track flex w-max">
+            {[0, 1].map((copy) => (
+              <div key={copy} className="flex shrink-0 items-center gap-8 pr-8 md:gap-11 md:pr-11" aria-hidden={copy === 1}>
+                {companyLogos.map((logo) => (
+                  <img key={logo} src={logo} alt="" className="h-10 w-auto max-w-none shrink-0 object-contain md:h-12" />
+                ))}
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -415,7 +429,7 @@ const App = () => {
               <span className="text-lg font-medium md:text-[20px]">{question}</span>
             </summary>
             <div className="px-6 pb-6 md:px-10 md:pb-9">
-              <p className="border-t border-dark/15 pt-5 text-base leading-relaxed text-dark/80">{answer}</p>
+              <p className="border-t border-dark/15 pt-5 font-semibold text-base leading-relaxed text-dark/80">{answer}</p>
             </div>
           </details>
         ))}
@@ -425,7 +439,7 @@ const App = () => {
       </button>
     </motion.section>
 
-    <motion.footer {...revealOnScroll} className="mt-16 px-5 w-full mb-5 text-muted sm:px-8 md:mt-20 md:px-12 md:mb-25 lg:px-25" id="about">
+    <motion.footer {...revealOnScroll} className="mt-16 w-full mb-5 text-text px-3 sm:px-5 md:px-7.5 md:mt-20 md:mb-6" id="about">
       <div className="bg-dark w-full rounded-[28px] md:rounded-[40px]">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 pt-10 px-7 pb-10 gap-x-5 gap-y-10 md:pt-17.5 md:px-12.5 md:pb-16">
           <div className="sm:col-span-2 lg:col-span-2 flex flex-col gap-y-7.5">
@@ -462,7 +476,7 @@ const App = () => {
             </form>
           </div>
         </div>
-        <div className="text-[#6B7280] w-full text-center pt-8.25 pb-7.25 border-t border-[#1F2937]">© {new Date().getFullYear()} Habitus. All rights reserved.</div>
+        <div className="text-text w-full text-center pt-8.25 pb-7.25 border-t border-[#1F2937]">© {new Date().getFullYear()} Habitus. All rights reserved.</div>
       </div>
     </motion.footer>
   </MotionConfig>

@@ -12,3 +12,29 @@
   --color-text: #E5E7EB;
   --color-muted: #4B5563;
 }
+
+@keyframes logo-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-marquee-track {
+  animation: logo-marquee 42s linear infinite;
+}
+
+@media (hover: hover) {
+  .logo-marquee:hover .logo-marquee-track {
+    animation-play-state: paused;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-marquee {
+    overflow-x: auto;
+  }
+
+  .logo-marquee-track {
+    animation: none;
+  }
+}
