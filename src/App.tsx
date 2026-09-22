@@ -240,8 +240,8 @@ const App = () => {
     </motion.section>
 
     <motion.section {...revealOnScroll} className="px-5 mt-10 grid grid-cols-1 gap-8 sm:px-8 md:pl-12 md:pr-0 md:mt-10.25 md:grid-cols-2 md:gap-8 lg:pl-25 lg:gap-15">
-      <div className="w-full bg-light-blue rounded-[28px] h-85 overflow-hidden pt-10 flex justify-center md:rounded-[40px] md:h-140 md:pt-18.5">
-        <img src="./images/habit-tracker.png" alt="Habit tracker app screen" className="h-auto w-48 object-cover border-[7px] border-dark rounded-[20px] md:w-55" />
+      <div className="w-full bg-light-blue rounded-[28px] h-85 overflow-hidden pt-10 md:rounded-[40px] md:h-140 md:pt-18.5">
+        <img src="./images/habit-tracker.png" alt="Habit tracker app screen" className="w-[40%] md:w-[55%] mx-auto object-cover border-[7px] border-dark rounded-[20px]" />
       </div>
       <div className="min-w-0 pt-0 flex flex-col justify-between gap-8 w-full md:pt-6.25">
         <p className="text-2xl leading-tight font-medium md:text-[clamp(1.5rem,3vw,2.25rem)] md:pr-8 lg:pr-25">Join thousands of users from top companies using Habitus to build better habits</p>
