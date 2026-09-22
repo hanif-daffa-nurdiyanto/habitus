@@ -132,6 +132,8 @@ const revealOnScroll = {
   variants: revealVariants,
 } as const
 
+const footerLinkClass = 'transition-colors duration-200 hover:text-white focus-visible:text-white'
+
 const App = () => {
   const [menuOpen, setMenuOpen] = useState(false)
   const [showAllFaqs, setShowAllFaqs] = useState(false)
@@ -430,25 +432,25 @@ const App = () => {
             <LogoIcon />
             <p className="max-w-68">Track your daily routines, stay consistent, and turn goals into habits — all in one beautiful app.</p>
             <div className="flex gap-5">
-              <a href="#"><LinkedinIcon /></a>
-              <a href="#"><InstagramIcon /></a>
+              <a href="#" aria-label="LinkedIn" className="text-[#9CA3AF] transition-colors duration-200 hover:text-white focus-visible:text-white"><LinkedinIcon /></a>
+              <a href="#" aria-label="Instagram" className="text-[#9CA3AF] transition-colors duration-200 hover:text-white focus-visible:text-white"><InstagramIcon /></a>
             </div>
           </div>
           <div>
             <h3 className="text-white text-[16px] font-semibold mb-6.5">Product</h3>
             <ul className="flex flex-col gap-4 text-[16px] font-normal">
-              <li><a href="#">Features</a></li>
-              <li><a href="#">Pricing</a></li>
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">Blog</a></li>
+              <li><a href="#" className={footerLinkClass}>Features</a></li>
+              <li><a href="#" className={footerLinkClass}>Pricing</a></li>
+              <li><a href="#" className={footerLinkClass}>FAQ</a></li>
+              <li><a href="#" className={footerLinkClass}>Blog</a></li>
             </ul>
           </div>
           <div>
             <h3 className="text-white text-[16px] font-semibold mb-6.5">Company</h3>
             <ul className="flex flex-col gap-4 text-[16px] font-normal">
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#" className={footerLinkClass}>About</a></li>
+              <li><a href="#" className={footerLinkClass}>Contact</a></li>
+              <li><a href="#" className={footerLinkClass}>Privacy Policy</a></li>
             </ul>
           </div>
           <div className="sm:col-span-2 lg:col-span-2">
